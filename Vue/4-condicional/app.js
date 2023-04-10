@@ -1,7 +1,7 @@
 var vm = new Vue({
     el: "#form",
     data:{
-        select:"",
+        select:"Argentina",
         paises: ['Argentina', 'Uruguay'],
         provinciasArgentinas: ['Buenos Aires','Mendoza','Entre Rios','Chubut'],
         provinciasUruguayas:['Montevideo','Artigas','Canelones','Flores'],
