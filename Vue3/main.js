@@ -1,23 +1,30 @@
-const API = "https://jsonplaceholder.typicode.com/users";
+const API = "https://api.github.com/users/";
 
 
-Vue.createApp({
+const app = Vue.createApp({
 
-  data() {
+  data(){
     return {
-      message: 'Hello Vue!'
-    };
-  },
-
-  methods:{
-    saludar(){
-      fetch(API)
-      .then(res => res.json())
-      .then(res => console.log(res));
+      nombre:"",
+      datos:null,
+      resultado:false,
     }
   },
 
+  methods:{
+    async buscar() {
+      const response = await fetch(API+this.nombre)
+      const data = await response.json()
+      this.datos = data;
+      this.resultado=true;
+      console.log(data)
+    }
+  }
+
 }).mount('#app')
+
+
+
 
 
 
