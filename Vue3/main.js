@@ -7,7 +7,6 @@ const app = Vue.createApp({
     return {
       nombre:"",
       datos:null,
-      resultado:false,
     }
   },
 
@@ -16,7 +15,6 @@ const app = Vue.createApp({
       const response = await fetch(API+this.nombre)
       const data = await response.json()
       this.datos = data;
-      this.resultado=true;
       console.log(data)
     }
   }
@@ -24,7 +22,12 @@ const app = Vue.createApp({
 }).mount('#app')
 
 
-
+/**
+      const response = await fetch(API+this.nombre)
+      const data = await response.json()
+      this.datos = data;
+      console.log(data)
+ */
 
 
 
