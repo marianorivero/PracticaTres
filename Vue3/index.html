@@ -11,23 +11,34 @@
 </head>
 <body>
     
-
-    <div id="app">
-        <form v-on:submit.prevent="buscar">
-            <input type="text" placeholder="..." v-model="nombre">
-            <input type="submit" value="Buscar">
-        </form>
-        <br>
+    <article class="content">
         
-        <div v-if="datos">
-            ID: {{datos.login}}
+        <div id="app">
+            
+            <form v-on:submit.prevent="buscar" class="search">
+                <input type="text" placeholder="..." v-model="nombre">
+                <input type="submit" value="Buscar">
+            </form>
             <br>
-            <img :src="datos.avatar_url" widht="150" height="150">
-        </div>
+            
+            <div v-if="datos"  class="result">
+                ID: {{datos.login}}
+                <br>
 
-        
-        
-    </div>
+                Nombre: {{datos.name}}
+                <br>
+
+                Perfil:<a :href="datos.html_url">{{datos.html_url}}</a>
+                <br><br>
+
+                <img :src="datos.avatar_url" widht="150" height="150">
+                <br><br><br>
+
+                <a v-if="esFavorito" href="#" class="result__toggle-favorite" @click="eliminarFavoritos">Eliminar a favoritos</a>
+                <a v-else href="#" class="result__toggle-favorite" @click="agregarFavoritos">Agregar a favoritos</a>
+            </div>
+        </div>  
+    </article>
 
     
     <script src="main.js"></script>
