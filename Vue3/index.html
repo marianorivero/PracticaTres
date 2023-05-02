@@ -37,6 +37,13 @@
                 <a v-if="esFavorito" href="#" class="result__toggle-favorite" @click="eliminarFavoritos">Eliminar a favoritos</a>
                 <a v-else href="#" class="result__toggle-favorite" @click="agregarFavoritos">Agregar a favoritos</a>
             </div>
+            <br>
+            
+            <div v-for="[, favorito] in favoritos">
+                <a @click.prevent="mostrarFavorito(favorito)" href="#">
+                    <img :src="favorito.avatar_url" widht="50" height="50">
+                </a>
+            </div>
         </div>  
     </article>
 

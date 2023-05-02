@@ -36,6 +36,10 @@ const app = Vue.createApp({
     eliminarFavoritos(){
       this.favoritos.delete(this.datos.id);
       //console.log(this.favoritos)
+    },
+
+    mostrarFavorito(favorito){
+      this.datos = favorito;
     }
 
   }
